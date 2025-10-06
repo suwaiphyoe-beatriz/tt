@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CookEase - Logged In View</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-gray-50">
+  <!-- 顶部导航栏 -->
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo和品牌名称 -->
+      <div class="flex items-center">
+        <a href="/" class="text-2xl font-bold text-orange-500 hover:text-orange-600 transition duration-200">
+          CookEase
+        </a>
+      </div>
+
+      <!-- 主导航链接 -->
+      <ul class="flex space-x-6">
+        <li>
+          <a href="/" class="text-gray-700 hover:text-orange-500 transition duration-200">Home</a>
+        </li>
+        <li>
+          <a href="/recipes" class="text-gray-700 hover:text-orange-500 transition duration-200">Recipes</a>
+        </li>
+        <li>
+          <a href="/about" class="text-gray-700 hover:text-orange-500 transition duration-200">About</a>
+        </li>
+      </ul>
+
+      <!-- 次要导航链接 - 已登录状态 -->
+      <ul class="flex space-x-4 items-center">
+        <li class="text-gray-700 flex items-center">
+          <i class="fas fa-user-circle mr-2 text-orange-500"></i>
+          Hi, John Doe
+        </li>
+        <li>
+          <button onclick="alert('Logout clicked!')"
+            class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-md transition duration-200 flex items-center">
+            <i class="fas fa-sign-out-alt mr-2"></i>
+            Logout
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 主要内容区域 -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <h1 class="text-3xl font-bold text-gray-800 mb-6">Welcome to CookEase!</h1>
+      <p class="text-gray-600 mb-4">You are currently logged in as <span class="font-semibold text-orange-500">John
+          Doe</span>.</p>
+      <p class="text-gray-600">This is how the navigation bar looks when a user is logged in. The logout button is
+        displayed on the right side.</p>
+
+      <div class="mt-8 p-4 bg-orange-50 rounded-lg">
+        <h2 class="text-xl font-semibold text-orange-800 mb-2">Navigation Features:</h2>
+        <ul class="list-disc list-inside text-orange-700">
+          <li>User greeting with name</li>
+          <li>Logout button with hover effect</li>
+          <li>Consistent orange color theme</li>
+          <li>Responsive design</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-gray-800 text-white mt-auto">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- 品牌信息 -->
+        <div>
+          <h2 class="text-2xl font-bold text-orange-400 mb-4">Cook Ease</h2>
+          <h3 class="text-lg font-semibold mb-2">About us</h3>
+          <p class="text-gray-300 mb-4">
+            CookEase aims to make cooking enjoyable, as we believe it contributes to a healthy lifestyle for
+            individuals, communities, and the environment.
+          </p>
+        </div>
+
+        <!-- 链接区域 -->
+        <div>
+          <h4 class="text-lg font-semibold mb-2">Blog</h4>
+          <div class="mb-4">
+            <p class="text-gray-300 hover:text-orange-400 cursor-pointer transition duration-200">Terms & Services</p>
+            <p class="text-gray-300 hover:text-orange-400 cursor-pointer transition duration-200">Privacy Policy</p>
+          </div>
+
+          <!-- 社交媒体链接 -->
+          <div class="flex space-x-4">
+            <a href="https://www.instagram.com" target="_blank"
+              class="bg-gray-700 hover:bg-orange-500 text-white p-2 rounded-full transition duration-200">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank"
+              class="bg-gray-700 hover:bg-orange-500 text-white p-2 rounded-full transition duration-200">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.x.com" target="_blank"
+              class="bg-gray-700 hover:bg-orange-500 text-white p-2 rounded-full transition duration-200">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 底部版权信息 -->
+      <div class="border-t border-gray-700 mt-6 pt-4 text-center text-gray-400">
+        <p>&copy; 2025 CookEase. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 简单的交互效果
+    document.addEventListener('DOMContentLoaded', function () {
+      const logoutBtn = document.querySelector('button');
+      logoutBtn.addEventListener('mouseenter', function () {
+        this.innerHTML = '<i class="fas fa-sign-out-alt mr-2"></i> Click to logout';
+      });
+      logoutBtn.addEventListener('mouseleave', function () {
+        this.innerHTML = '<i class="fas fa-sign-out-alt mr-2"></i> Logout';
+      });
+    });
+  </script>
+</body>
+
+</html>
